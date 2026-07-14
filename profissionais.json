@@ -3,12 +3,14 @@
     "id": 1,
     "nome": "a",
     "email": "a",
-    "fone": "1"
+    "senha": "a",
+    "especialidade": "a"
   },
   {
     "id": 2,
     "nome": "b",
     "email": "b",
-    "fone": "2"
+    "senha": "b",
+    "especialidade": "b"
   }
 ]
