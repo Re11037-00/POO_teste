@@ -3,11 +3,17 @@ import json
 
 class ServicoDAO:
     def __init__(self):
-        self.__arquivo = "clientes.json"
-        self,__objetos = []
+        self.__arquivo = "servicos.json"
+        self.__objetos = []
         self.__abrir()
 
+    
     def inserir(self, obj):
+        maior_id = 0
+        for item in self.__objetos:
+            if item.get_id() > maior_id:
+                maior_id = item.get_id()
+        obj.set_id(maior_id + 1)
         self.__objetos.append(obj)
         self.__salvar()
 
@@ -18,6 +24,13 @@ class ServicoDAO:
         for obj in self.__objetos:
             if obj.get_id() == id: return obj
         return None
+    
+    def listar_descricao(self, iniciais):
+        resultado = []
+        for obj in self.__objetos:
+            if obj.get_desc().lower().startswith(iniciais.lower()):
+                resultado.append(obj)
+        return resultado
 
     def atualizar(self, obj):
         aux = self.listar_id(obj.get_id())

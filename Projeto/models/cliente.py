@@ -8,7 +8,7 @@ class Cliente:
         return f"{self.__id} - {self.__nome} - {self.__email} – {self.__fone}"
     
     def set_id(self, id):
-        if id<0: raise ValueError("Id deve ser positivo")
+        if id < 0: raise ValueError("Id deve ser positivo")
         self.__id= id
     def set_nome(self, nome):
         if nome == "": raise ValueError("Nome deve ser informado")
